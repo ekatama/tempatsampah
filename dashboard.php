@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php include "config.php" ?>
 <?php include "head.php" ?>
 
 <body>
@@ -133,7 +133,46 @@
   }
 
 //manggil marker data dari inputan user
+function callback(results, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+      for (var i = 0; i < results.length; i++) {
+        createMarker(results[i]);
+      }
+    }
+  }
 
+  function createMarker(place) {
+    <?php 
+    $query = mysqli_query($connect_db,"select * from tempatsampah");
+    while($row=mysqli_fetch_array($query)){ 
+      
+      ?>
+    var image = {
+      
+      scaledSize: new google.maps.Size(32, 32), // scaled size
+      origin: new google.maps.Point(0,0), // origin
+      anchor: new google.maps.Point(0, 0) // anchor
+    };
+
+    var placeLoc = place.geometry.location;
+
+    var marker = new google.maps.Marker({
+
+      map: map,
+      position: {lat: <?php echo $row['latitude'] ?>, lng: <?php echo $row['longtitude'] ?>},
+      icon: image
+
+    });
+
+    google.maps.event.addListener(marker, 'click', function() {
+
+      infowindow.setContent("<?php echo "<img src='".$row['gambar']."' alt='Smiley face' height='42' width='42'>"."<p>".$row['nama']."</p><p>".$row['jenis']."</p><p>".$row['alamat']."</p><p>".$row['kapasitas']."</p>" ?>");
+      infowindow.open(map, this);
+
+    });
+    <?php } ?>
+
+  }
 
 
 
