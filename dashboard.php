@@ -159,14 +159,14 @@ function callback(results, status) {
     var marker = new google.maps.Marker({
 
       map: map,
-      position: {lat: <?php echo $row['latitude'] ?>, lng: <?php echo $row['longtitude'] ?>},
+      position: {lat: <?php echo $row['latitude'] ?>, lng: <?php echo $row['longitude'] ?>},
       icon: image
 
     });
 
     google.maps.event.addListener(marker, 'click', function() {
 
-      infowindow.setContent("<?php echo "<img src='".$row['gambar']."' alt='Smiley face' height='42' width='42'>"."<p>".$row['nama']."</p><p>".$row['jenis']."</p><p>".$row['alamat']."</p><p>".$row['kapasitas']."</p>" ?>");
+      infowindow.setContent("<?php echo "<img src='".$row['gambar']."' height='42' width='42'>"."<p>".$row['nama']."</p><p>".$row['jenis']."</p><p>".$row['alamat']."</p><p>".$row['kapasitas']."</p>" ?>");
       infowindow.open(map, this);
 
     });

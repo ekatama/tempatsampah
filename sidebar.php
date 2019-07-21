@@ -38,6 +38,14 @@
                       </a>
           </li>
 
+
+          <li class="">
+            <a class="" href="data.php">
+                          <i class="icon_trash_alt"></i>
+                          <span>Data</span>
+                      </a>
+          </li>
+
         </ul>
         <!-- sidebar menu end-->
       </div>
