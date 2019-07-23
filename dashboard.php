@@ -100,7 +100,7 @@
     } else {
       handleLocationError();
     }
-
+  
     infowindow = new google.maps.InfoWindow();
 
   }
@@ -166,13 +166,14 @@ function callback(results, status) {
 
     google.maps.event.addListener(marker, 'click', function() {
 
-      infowindow.setContent("<?php echo "<img src='".$row['gambar']."' height='42' width='42'>"."<p>".$row['nama']."</p><p>".$row['jenis']."</p><p>".$row['alamat']."</p><p>".$row['kapasitas']."</p>" ?>");
+      infowindow.setContent("<?php echo "<img src='\images/".$row['gambar']."' height='42' width='42'>"."<p>".$row['nama']."</p><p>".$row['jenis']."</p><p>".$row['alamat']."</p><p>".$row['kapasitas']."</p>" ?>");
       infowindow.open(map, this);
 
     });
     <?php } ?>
 
   }
+  
 
 
 

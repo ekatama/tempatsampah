@@ -28,18 +28,12 @@ include "config.php";
           </div>
         </div>
         <!-- page start-->
-        <div class="row">
-        <div class="col-lg-6">
         
-                <a href="input_data.php" type="button" class="btn btn-primary btn-lg btn-block">Tambah Data Tempat Sampah</a>
-                
-        </div>
-        </div>
         <br>
         <div class="col-md-12 col-sm-12 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>KeyTable example <small>Users</small></h2>
+                    <h2>Data Seluruh Tempat Sampah di Universitas Syiah Kuala</h2>
                    
                     <div class="clearfix"></div>
                   </div>
@@ -47,9 +41,7 @@ include "config.php";
                     <div class="row">
                       <div class="col-sm-12">
                         <div class="card-box table-responsive">
-                          <p class="text-muted font-13 m-b-30">
-                            KeyTable provides Excel like cell navigation on any table. Events (focus, blur, action etc) can be assigned to individual cells, columns, rows or all cells.
-                          </p>
+                         
 
                           <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                             <thead>
@@ -58,7 +50,7 @@ include "config.php";
                                 <th>Jenis</th>
                                 <th>Kapasitas</th>
                                 <th>Alamat</th>
-                                <th>Aksi</th>
+                                <th>Koordinat(Lat,Long)</th>
                                
                               </tr>
                             </thead>
@@ -81,10 +73,7 @@ include "config.php";
                                 <td><?php echo $row['jenis'] ?></td>
                                 <td><?php echo $row['kapasitas'] ?></td>
                                 <td><?php echo $row['alamat'] ?></td>
-                                <td>
-                                <a href="edit_data.php?id_tempatsampah=<?php echo $row['id_tempatsampah'] ?>" class="btn btn-primary" href="" title="Bootstrap 3 themes generator">Edit</a>
-                                <a class="btn btn-danger" href="" title="Bootstrap 3 themes generator">Hapus</a>
-                                </td>
+                                <td><?php echo $row['latitude'].' - '.$row['longitude'];  ?></td>
                                 
                               </tr>
                              

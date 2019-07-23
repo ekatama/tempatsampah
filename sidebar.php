@@ -10,7 +10,7 @@
           </li>
 
           <li class="">
-            <a class="" href="dashboard.php">
+            <a class="" href="tempatsampah.php">
                           <i class="icon_trash_alt"></i>
                           <span>Tempat Sampah</span>
                       </a>

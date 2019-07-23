@@ -1,22 +1,20 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
--- https://www.phpmyadmin.net/
+-- version 4.1.12
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 11, 2019 at 10:44 AM
--- Server version: 10.3.15-MariaDB
--- PHP Version: 7.2.19
+-- Generation Time: Jul 23, 2019 at 12:00 PM
+-- Server version: 5.6.16
+-- PHP Version: 5.5.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `rute_sampah`
@@ -28,11 +26,12 @@ SET time_zone = "+00:00";
 -- Table structure for table `admin`
 --
 
-CREATE TABLE `admin` (
+CREATE TABLE IF NOT EXISTS `admin` (
   `id_admin` varchar(10) NOT NULL,
   `nama` varchar(40) NOT NULL,
   `email` varchar(10) NOT NULL,
-  `hakakses` varchar(10) NOT NULL
+  `hakakses` varchar(10) NOT NULL,
+  PRIMARY KEY (`id_admin`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -41,27 +40,26 @@ CREATE TABLE `admin` (
 -- Table structure for table `tempatsampah`
 --
 
-CREATE TABLE `tempatsampah` (
-  `id_tempatsampah` varchar(10) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tempatsampah` (
+  `id_tempatsampah` int(10) NOT NULL AUTO_INCREMENT,
   `nama` varchar(40) NOT NULL,
   `jenis` varchar(10) NOT NULL,
   `kapasitas` varchar(10) NOT NULL,
   `gambar` varchar(10) NOT NULL,
-  `longtitude` decimal(10,0) NOT NULL,
-  `latitude` decimal(10,0) NOT NULL,
-  `alamat` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `latitude` varchar(20) NOT NULL,
+  `longitude` varchar(20) NOT NULL,
+  `alamat` text NOT NULL,
+  PRIMARY KEY (`id_tempatsampah`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
--- Indexes for dumped tables
+-- Dumping data for table `tempatsampah`
 --
 
---
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id_admin`);
-COMMIT;
+INSERT INTO `tempatsampah` (`id_tempatsampah`, `nama`, `jenis`, `kapasitas`, `gambar`, `latitude`, `longitude`, `alamat`) VALUES
+(4, 'Jurusan MIa', 'Organik', '-', '', '5.569400', '95.367949', 'Fakultas MIPA Jurusan Manajemen Informatika'),
+(5, 'ICT', 'Organik', '-', '-', '5.571418', '95.367488', 'Darussalam'),
+(6, 'Fakultas MIPA', '-', '-', '34-512.png', '5.5670668', '95.3703729', 'JL. Syech Abdurrauf No.3, Kopelma Darussalam, Syiah Kuala, Kota Banda Aceh, Aceh 23111');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
