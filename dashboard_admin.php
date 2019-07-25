@@ -1,6 +1,6 @@
 <?php 
 include "config.php";
-$halaman="user";
+$halaman="admin";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,8 +22,8 @@ $halaman="user";
       <section class="wrapper">
         <div class="row">
           <div class="col-lg-12">
-            <h3 class="page-header"><i class="fa fa fa-bars"></i> Dashboard</h3>
-          
+            <h3 class="page-header"><i class="fa fa fa-bars"></i> Dashboard Admin</h3>
+        
           </div>
         </div>
         
@@ -32,7 +32,7 @@ $halaman="user";
            
                     <div class="col-md-12">
                         <div class="heading text-center">
-        
+                       
                             
                             <div id="map"></div>
 

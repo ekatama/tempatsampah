@@ -1,5 +1,6 @@
-<?php
+<?php 
 include "config.php";
+$halaman="user";
 ?>
 <!DOCTYPE html>
 <html lang="en">
